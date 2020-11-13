@@ -10,7 +10,7 @@ function App({error, getCharactersAction, data, isFetching, changeStatusAction, 
   
   if(error){
     return (
-    <p className="error">Извините произошла ошибка, перезагрузите страницу или попробуйте позже.</p>
+    <p className="error">Sorry, server don't answer now, please try again later.</p>
     )
   } else {
     return (<div className='App'>
@@ -25,7 +25,6 @@ function App({error, getCharactersAction, data, isFetching, changeStatusAction, 
 }}
 
 const mapStateToProps = ({ characterReducer, modalReducer }) => {
-  console.log(characterReducer)
   return {
     data: characterReducer.data,
     next: characterReducer.next,

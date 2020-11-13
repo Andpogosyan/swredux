@@ -5,18 +5,18 @@ const Modal = ({ gender, style, hair, height, changeStatus, name, src }) => {
     return (
         <div className='modal'>
             <div className='modalImg'>
-                <img src={src} />
+                <img src={src} alt='character_logo'/>
             </div>
             <div className='modalItems'>
                 <div className='modalInfo'>
-                    <p>Имя: {name}</p>
-                    <p>Цвет волос: {hair}</p>
-                    <p>Рост: {height}</p>
-                    <p>Цвет одежды: {style}</p>
-                    <p>Пол: {gender}</p>
+                    <p>Name: {name}</p>
+                    <p>Hair color: {hair}</p>
+                    <p>Height: {height}</p>
+                    <p>Skin color: {style}</p>
+                    <p>Gender: {gender}</p>
                 </div>
                 <div className='modalButton'>
-                    <button onClick={changeStatus}>close</button>
+                    <button onClick={changeStatus}>Close</button>
                 </div>
             </div>
 

@@ -6,8 +6,8 @@ const Buttons = ({ getChar, data }) => {
     if (!data.results) {
         return (
             <div className='startPage'>
-                <p className='wellcomeMessage'>Привет, что бы увидеть персонажей из Star Wars, просто кликни на кнопку ниже.</p>
-                <button className='startButton' onClick={() => getChar('http://swapi.dev/api/people/?page=1')}>Показать!</button>
+                <p className='wellcomeMessage'>Hello, if you want to see characters from Star Wars movies, click on button "Show!".</p>
+                <button className='startButton' onClick={() => getChar('http://swapi.dev/api/people/?page=1')}>Show!</button>
             </div>
 )
     } else {

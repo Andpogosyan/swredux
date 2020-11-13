@@ -8,7 +8,7 @@ const Characters = ({ results, isFetching, status, changeStatus, whoClick }) => 
   let currentPerson = results[whoClick];
   
   if (isFetching) {
-    return <div className='loading'>Загрузка...</div>
+    return <div className='loading'>Loading...</div>
   } else {
     return <div className="people">
       {
@@ -24,8 +24,7 @@ const Characters = ({ results, isFetching, status, changeStatus, whoClick }) => 
               <span>{name}</span>
               {!status && <p className='seeMore' id={index} onClick={changeStatus}>Click here to see more...</p>}
             </div>
-            {console.log("STATUS", status)}
-          </div>
+            </div>
         })
       }
       {status && <Modal src={`./images/${currentPerson.name.split(' ').join('')}.jpg`}
