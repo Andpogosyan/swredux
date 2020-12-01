@@ -1,6 +1,7 @@
 import React from 'react';
 import propTypes from 'prop-types';
 
+
 const Modal = ({ gender, style, hair, height, changeStatus, name, src }) => {
     return (
         <div className='modal'>

@@ -5,17 +5,22 @@ export const GET_CHARACTERS_FAIL = 'GET_CHARACTERS_FAIL';
 export const GET_CHARACTERS_FULL = 'GET_CHARACTERS_FULL';
 
 
+type GetCharactersActionType = {
+    type: typeof GET_CHARACTERS_REQUEST | typeof GET_CHARACTERS_SUCCESS | typeof GET_CHARACTERS_FAIL
+    payload: any
+}
 
 
-export function getCharacters(url) {
-    if(url){return function (dispatch) {
+export function getCharacters(url: string) {
+    if(url){return function (dispatch: any) {
         dispatch({
             type: GET_CHARACTERS_REQUEST,
         })
         
-        const getChar = async (url) => {
+        const getChar = async (url: string) => {
             const response = await axios(url).then((res) =>{
                     const {data} = res;
+                    console.log('data', data)
                     dispatch({
                         type: GET_CHARACTERS_SUCCESS,
                         payload: data,
@@ -23,9 +28,7 @@ export function getCharacters(url) {
                 }).catch((err) => {
                     dispatch({
                         type: GET_CHARACTERS_FAIL,
-                        error: true,
-                        
-                    })
+                        })
                   });;
                 
         }
@@ -37,16 +40,3 @@ export function getCharacters(url) {
 }
 
 
-
-// then(() =>{
-//     dispatch({
-//         type: GET_CHARACTERS_SUCCESS,
-//         payload: data,
-//     })
-// }).catch(() => {
-//     dispatch({
-//         type: GET_CHARACTERS_FAIL,
-//         error: true,
-        
-//     })
-//   });

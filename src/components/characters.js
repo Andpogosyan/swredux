@@ -8,7 +8,9 @@ const Characters = ({ results, isFetching, status, changeStatus, whoClick }) => 
   let currentPerson = results[whoClick];
   
   if (isFetching) {
-    return <div className='loading'>Loading...</div>
+    return <div className='loading'><div class="cssload-container">
+    <div class="cssload-speeding-wheel"></div>
+    </div></div>
   } else {
     return <div className="people">
       {

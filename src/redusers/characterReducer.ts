@@ -1,7 +1,16 @@
 import {GET_CHARACTERS_REQUEST, GET_CHARACTERS_SUCCESS, GET_CHARACTERS_FAIL} from '../actions/characterActions'
 
 
-const initialState = {
+export type CharacterInitialStateType = {
+    data: any
+    next: string | null
+    previous: string | null
+    isFetching: boolean
+    error: boolean
+}
+
+
+const initialState: CharacterInitialStateType = {
     data: {},
     next: 'http://swapi.dev/api/people/?page=1',
     previous: null,
@@ -9,13 +18,12 @@ const initialState = {
     error: false,
 }
 
-const characterReducer = ( state = initialState, action ) =>{
+const characterReducer = ( state = initialState, action: any ) : CharacterInitialStateType =>{
     switch(action.type){
         case GET_CHARACTERS_REQUEST:
             return {
                 ...state, 
                 isFetching: true,
-                error: ''
             }
         case GET_CHARACTERS_SUCCESS:
             return {
