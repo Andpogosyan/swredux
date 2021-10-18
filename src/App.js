@@ -7,7 +7,7 @@ import { changeModalStatus } from './actions/modalAction';
 
 
 function App({error, getCharactersAction, data, isFetching, changeStatusAction, status, whoClick }) {
-  
+  const hello = 'hello'
   if(error){
     return (
     <p className="error">Sorry, server don't answer now, please try again later.</p>
